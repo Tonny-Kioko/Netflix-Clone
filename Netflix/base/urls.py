@@ -5,6 +5,10 @@ from . import views
 
 urlpatterns = [
     path('',views.Home, name='home'),
-    path('login/', views.LoginPage, name="login" ), 
+    path('login/', views.loginPage, name="login" ), 
+    path('logout/', views.logoutProfile, name="logout" ),
+
+    path('register/', views.registerUser, name="register" ),
+    
 ]
 

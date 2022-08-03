@@ -19,7 +19,7 @@ from django.contrib.auth.decorators import login_required
 
 
 
-def LoginPage(request):
+def loginPage(request):
     page = 'login'
     if request.user.is_authenticated:
         return redirect ('home')
@@ -45,12 +45,36 @@ def LoginPage(request):
             return render(request, 'profileCreate.html', context)
 
 
+def logoutProfile(request):
+    logout(request)
+    return redirect('home')
+
+
+def registerUser(request):
+    form = MyUserCreationForm()
+
+    if request.method == "POST":
+        form = MyUserCreationForm(request.POST)
+        if form.is_valid():
+            customuser = form.save(commit=False)
+            customuser.username = customuser.username.lower()
+            customuser.save()
+            login(request, customuser)
+            return redirect ('home')
+        else:
+            messages.error(request, "An error occurred in Registration")
+    
+    context = {'form': 'form'}
+    return render (request, 'profileCreate.html', context) 
+
+
+
 
 
 def Home(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
 
-    movies = Movie.objects.filter (
+    movies = Movie.objects.filter(
         Q(title__icontains=q) |
         Q(description__icontains=q) |
         Q(cast__icontains=q) |
