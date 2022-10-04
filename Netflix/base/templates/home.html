@@ -28,7 +28,7 @@
             <div class="w-full flex justify-center">
                 <div class="flex justify-center items-center w-11/12 md:w-10/12">
                     <input type="email" name="" id="" placeholder="Email address" class="md:py-5 py-4 px-2 placeholder-gray-500 rounded-tl-sm rounded-bl-sm outline-none  text-gray-900 bg-gray-50 block w-8/12 md:w-3/4">
-                    <a href="{% url 'register' %}" class='md:w-1/4'>
+                    <a href='{% url "register" %}' class='md:w-1/4'>
                     
                         <button class="bg-primary_red font-medium md:font-normal flex justify-center items-center py-4 px-2 md:px-0 rounded-br-sm rounded-tr-sm md:text-2xl">
                             <span>
@@ -41,26 +41,37 @@
             </div>
         </div>
     </header>
-
+   
     <section class='flex flex-col md:flex-row items-center border-gray-900 border-b-8' style="min-height: 70vh;">
-        <div class="md:w-1/2 flex flex-col justify-center text-center md:text-left p-5 md:p-10 ">
+        <div class="md:w-1/2 flex flex-col justify-center text-center md:text-right p-5 md:p-10">
             <h2 class="md:text-5xl text-4xl font-semibold mb-4">
                 Enjoy on your TV.
             </h2>
             <h5 class="md:text-xl text-lg">
-                Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.
+                Watch on Smart TVs,
+                Playstation, Xbox, Chromecast, Apple TV, 
+                Blu-ray players, and more.
             </h5>
         </div>
-        <div class='md:w-1/2 flex justify-center items-center'>
-            <img src="{% static 'tv.png' %}" class="w-8/12" alt="">
+        <div class="our-story-card-img-container">
+            <div class="our-story-card-animation-container">
+                <div class="our-story-card-animation" data-uia="our-story-card-animation"><video
+                        class="our-story-card-video" data-uia="our-story-card-video" autoplay="" playsinline="" muted=""
+                        loop="">
+                        <source
+                            src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v"
+                            type="video/mp4">
+                    </video>
+                    <div class="our-story-card-animation-text"></div>
+                    <div class="our-story-card-animation-custom" data-uia="our-story-card-custom" aria-hidden="true">
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="center-pixel" style="position:absolute"></div>
     </section>
 
     <section class='flex flex-col md:flex-row items-center border-gray-900 border-b-8' style="min-height: 70vh;">
-        <div class='md:w-1/2 flex justify-center items-center '>
-            <img src="{% static 'mobile-0819.jpg' %}" class="w-8/12" alt="">
-        </div>
-
         <div class="md:w-1/2 flex flex-col justify-center text-center md:text-left p-5 md:p-10">
             <h2 class="md:text-5xl text-4xl font-semibold mb-4">
                 Download your shows to watch offline.
@@ -69,7 +80,18 @@
                 Save your favorites easily and always have something to watch.
             </h5>
         </div>
-        
+        <div class="our-story-card-img-container">
+            <div class="our-story-card-animation-container"><img alt="" class="our-story-card-img"
+                    src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg"
+                    data-uia="our-story-card-img">
+                <div class="our-story-card-animation" data-uia="our-story-card-animation">
+
+                    <div class="our-story-card-animation-custom" data-uia="our-story-card-custom" aria-hidden="true">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="center-pixel" style="position:absolute"></div>
     </section>
 
     <section class='flex flex-col md:flex-row items-center border-gray-900 border-b-8' style="min-height: 70vh;">
@@ -85,6 +107,7 @@
             <img src="{% static 'netflix_kid.png' %}" class="w-8/12" alt="">
         </div>
     </section>
+
     <footer class=" px-5 py-10 ">
         <ul class="flex justify-between items-center">
             
