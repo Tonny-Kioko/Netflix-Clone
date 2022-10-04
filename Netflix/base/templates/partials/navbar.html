@@ -10,7 +10,7 @@
         {% if AUTH != 'false'  %}
             {% if request.user.is_authenticated %}
             <div>
-            <form action="{% url 'account_logout' %}" method="post">
+            <form action="{% url 'logout' %}" method="post">
                 {% csrf_token %}
                 <button class='bg-primary_red py-1 px-3 text-white md:text-lg rounded-md'>
                     Logout
@@ -19,7 +19,7 @@
             </div>
             {% else %}
             <div>
-            <a href="{% url 'account_login' %}">
+            <a href="{% url 'login' %}">
 
                 <button class='bg-primary_red py-1 px-3 text-white md:text-lg rounded-md'>
                     Sign In 

@@ -5,7 +5,7 @@ from django.views import View
 from .models import CustomUser, Movie, Video, Profile
 from django.db.models import Q
 from django.contrib import messages
-from .forms import MyUserCreationForm, ProfileForm
+from . forms import MyUserCreationForm, ProfileForm
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
@@ -42,7 +42,7 @@ def loginPage(request):
             messages.error(request, "Username does not Exist")
         
         context = {'page': 'page'}
-            return render(request, 'profileCreate.html', context)
+        return render(request, 'profileCreate.html', context)
 
 
 def logoutProfile(request):
@@ -78,7 +78,7 @@ def Home(request):
         Q(title__icontains=q) |
         Q(description__icontains=q) |
         Q(cast__icontains=q) |
-        Q(genre__icontains=q) |
+        Q(genre__icontains=q) 
     )
 
     movies = Movie.objects.all()

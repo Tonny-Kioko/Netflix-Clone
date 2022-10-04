@@ -1,3 +1,4 @@
+import email
 from email.policy import default
 from pydoc import describe
 from pydoc_data.topics import topics
@@ -43,6 +44,8 @@ class CustomUser(AbstractBaseUser):
 
 class Profile(models.Model):
     name = models.CharField(max_length=200)
+    email = models.EmailField(null=False, max_length = 200)
+    username = models.CharField(max_length = 20, null = True)
     age = models.CharField(max_length=20, choices=Age_choices)
     uuid = models.UUIDField(default=uuid.uuid4)
 
