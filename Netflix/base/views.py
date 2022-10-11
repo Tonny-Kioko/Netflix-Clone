@@ -27,8 +27,8 @@ def loginPage(request):
         return redirect ('home')
 
     if request.method == 'POST':
-        email = request.POST.get('email').lower() 
-        password = request.POST.get('password').lower()
+        email = request.POST.get('email') 
+        password = request.POST.get('password')
 
         try:
             customuser = CustomUser.objects.get(email=email)
