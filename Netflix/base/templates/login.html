@@ -2,7 +2,7 @@
     {% load static %}
     {% block title %}
     
-    Netflix - Login
+    Netflix - Sign in
     {% endblock title %}
     
     {% block others %}
@@ -17,7 +17,7 @@
         <div class="z-10 h-full py-32 md:py-0 text-gray-100 w-6/12  flex items-center flex-col">
             <form method='POST' class="bg-black bg-opacity-70 py-8 px-4 w-8/12 rounded-md" >
                 <h1 class="text-4xl font-semibold text-center ">
-                    Log In
+                    Sign In
                 </h1>
                 {% csrf_token %}
                 
@@ -39,7 +39,7 @@
                     <Label class='text-lg font-medium mb-3'>
                         Email
                     </Label>
-                    <input class="p-2 bg-gray-200 rounded-sm text-gray-900 outline-none block w-full" type="email" name="login" id="id_login" placeholder="Your Email">
+                    <input class="p-2 bg-gray-200 rounded-sm text-gray-900 outline-none block w-full" type="email" name="sign in" id="id_login" placeholder="TonnyKioko@email.com">
                 </div>
                 <div class='my-3'> 
                     <Label class='text-lg font-medium mb-3'>
@@ -52,7 +52,7 @@
                 {% endif %}
                 <div class="flex justify-center items-center">
                     <button class="py-2 px-4 bg-primary_red text-gray-100 font-medium text-lg rounded-md">
-                        Log In
+                        Sign In
                     </button>
                 </div>
 
@@ -64,4 +64,14 @@
             </form>
         </div>
     </header>
+
+    <footer class=" px-5 py-10 ">
+        <ul class="flex justify-between items-center">
+            
+            
+            <li><a href="https://www.linkedin.com/in/anthony-kioko-4021b01a5">Project? Get in touch</a></li>
+            <li><a href="https://tonny-kioko.github.io/anthonykioko.github.io/">Portfolio? Here it is</a></li>
+        </ul>
+    </footer>
+
 {% endblock content %}

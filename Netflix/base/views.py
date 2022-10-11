@@ -28,7 +28,7 @@ def loginPage(request):
 
     if request.method == 'POST':
         email = request.POST.get('email').lower() 
-        password = request.POST.get('password')
+        password = request.POST.get('password').lower()
 
         try:
             customuser = CustomUser.objects.get(email=email)
@@ -67,7 +67,7 @@ def registerUser(request):
             messages.error(request, "An error occurred in Registration")
     
     context = {'form': 'form'}
-    return render (request, 'profileCreate.html', context) 
+    return render (request, 'signup.html', context) 
 
 
 
