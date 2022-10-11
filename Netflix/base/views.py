@@ -1,4 +1,5 @@
 import email
+import imp
 from django import views
 from django.shortcuts import render, redirect
 from django.views import View 
@@ -11,6 +12,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+
 
 
 
@@ -42,7 +44,7 @@ def loginPage(request):
             messages.error(request, "Username does not Exist")
         
         context = {'page': 'page'}
-        return render(request, 'profileCreate.html', context)
+        return render(request, 'profileCreate.html', context, 'login.html')
 
 
 def logoutProfile(request):
