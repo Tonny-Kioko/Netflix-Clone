@@ -49,6 +49,9 @@ class Profile(models.Model):
     age = models.CharField(max_length=20, choices=Age_choices)
     uuid = models.UUIDField(default=uuid.uuid4)
 
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
     def __str__(self):
         return (self.name)
 
