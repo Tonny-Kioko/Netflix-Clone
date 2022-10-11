@@ -43,8 +43,8 @@ def loginPage(request):
         else:
             messages.error(request, "Username does not Exist")
         
-        context = {'page': 'page'}
-        return render(request, 'profileCreate.html', context, 'login.html')
+    context = {'page': 'page'}
+    return render(request, 'login.html', context)
 
 
 def logoutProfile(request):
